@@ -19,7 +19,7 @@ function DefaultInput({
 }: Props) {
   return (
     <InputBox className={className}>
-      {icon && <Icon icon={icon} />}
+      {icon && <div><Icon icon={icon} /></div>}
       <Input
         className={className}
         type={type}
