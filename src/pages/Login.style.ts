@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { white, blue1 } from '../styles/const';
+import { white1, blue1 } from 'styles/const';
 
 export const Wrap = styled.div`
   display: flex;
@@ -11,6 +11,11 @@ export const Wrap = styled.div`
   > div {
     width: 100%;
     margin: 0 40px;
+  }
+
+  .findpwd {
+    color: ${blue1};
+    font-size: 14px;    
   }
 `;
 
@@ -35,10 +40,6 @@ export const LoginButton = styled.button`
   width: 100%;
   margin-bottom: 10px;
   padding: 7.5px 0;
-  color: ${white};
+  color: ${white1};
   background-color: ${blue1};
-`;
-export const FindPwd = styled.a`
-  color: ${blue1};
-  font-size: 14px;
 `;
