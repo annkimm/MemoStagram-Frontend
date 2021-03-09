@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { gray3 } from '../styles/const';
+import { gray3, white1 } from 'styles/const';
 
 export const Wrapper = styled.header`
     display: flex;
@@ -7,6 +7,7 @@ export const Wrapper = styled.header`
     align-items: center;
     height: 55px;
     padding: 0 20px;
+    background-color: ${white1};
     border-bottom: 1px solid ${gray3};
 `;
 
