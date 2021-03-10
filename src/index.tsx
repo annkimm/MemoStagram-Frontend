@@ -12,7 +12,7 @@ import initFontAwesome from './utils/fontawesome';
 initFontAwesome();
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(rootReducer, process.env.NODE_ENV === 'production'
+export const store = createStore(rootReducer, process.env.NODE_ENV === 'production'
   ? applyMiddleware(sagaMiddleware)
   : composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
