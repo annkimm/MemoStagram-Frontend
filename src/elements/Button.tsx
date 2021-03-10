@@ -2,18 +2,23 @@ import React from 'react';
 import { DefaultButton } from './Button.style';
 
 interface Props {
-  type?: 'submit' | 'button' | 'reset';
-  onClick: () => void;
+  onClick: (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   children: React.ReactNode;
-  margin?: string;
+  className?: string;
   width? : string;
+  dataContent?: string;
 }
 
 const Button = ({
-  onClick, type = 'button', children, margin = '', width = '',
+  onClick, children, width = '', className = '', dataContent = '',
 }: Props) => (
-  // eslint-disable-next-line react/button-has-type
-  <DefaultButton type={type} onClick={onClick} margin={margin} width={width}>
+  <DefaultButton
+    type="button"
+    onClick={onClick}
+    width={width}
+    className={className}
+    data-content={dataContent}
+  >
     {children}
   </DefaultButton>
 );

@@ -1,8 +1,8 @@
 import React from 'react';
 import { IconName } from '@fortawesome/fontawesome-common-types';
+import { IconPrefix } from 'types/fontawesome';
 import Icon from './Icon';
-import { IconPrefix } from '../type/fontawesome';
-import { InputBox, Input } from './input.style';
+import { InputBox, Input } from './DefaultInput.style';
 
 interface Props {
   name: string;
@@ -10,23 +10,26 @@ interface Props {
   type: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyUp?: (e: React.KeyboardEvent) => void;
   icon?: [IconPrefix, IconName];
-  className?: string;
+  boxClassName?: string;
+  inputClassName?: string;
 }
 
 function DefaultInput({
-  name, placeholder, type, value, onChange, icon, className = '',
+  name, placeholder, type, value, onChange, onKeyUp, icon, boxClassName = '', inputClassName,
 }: Props) {
   return (
-    <InputBox className={className}>
+    <InputBox className={boxClassName}>
       {icon && <div><Icon icon={icon} /></div>}
       <Input
-        className={className}
+        className={inputClassName}
         type={type}
         name={name}
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        onKeyUp={onKeyUp}
       />
     </InputBox>
   );
