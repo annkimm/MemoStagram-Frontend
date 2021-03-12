@@ -1,6 +1,10 @@
 import { store } from 'index';
 import { addFiles } from 'store/actions/uploadStore';
 
+export function makeArrayKey(length: number) {
+  return Array.from(Array(length).keys());
+}
+
 export function makeConcatArray(uploadList: Array<string>, idx: number) {
   const frontUploadList = uploadList.slice(0, idx);
   const backUploadList = uploadList.slice(idx + 1);
