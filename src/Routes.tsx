@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux';
 import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
-import { RootState } from './store';
-import Login from './pages/Login';
-import Main from './pages/Main';
+import { RootState } from 'store';
+import Login from 'pages/Login';
+import Main from 'pages/Main';
+import Post from 'pages/Post';
 
 function Routes() {
   const isloggedIn = useSelector((state: RootState) => state.loginReducer.isloggedIn);
@@ -14,6 +15,7 @@ function Routes() {
     <Router>
       <Switch>
         <Route exact path="/" component={isloggedIn ? Main : Login} />
+        <Route exact path="/post/:postId" component={Post} />
       </Switch>
     </Router>
   );

@@ -36,3 +36,7 @@ export function getPosts(nextPage: number) {
   const hasMorePage = nextPage > 0 ? `?page=${nextPage}` : '';
   return instance.get(`/post/all/${hasMorePage}`);
 }
+
+export function getPost(postId: number) {
+  return instance.get(`/post/${postId}`);
+}
