@@ -13,3 +13,17 @@ export function checkEmailValidity(email: string) {
 
   return isEmailFormat && (emailAddress === emailVal[1] ? gmailRegx : emailRegx).test(email);
 }
+
+export function convertFromTextToTag(match: string, capture: string) {
+  return capture ? `<a href="/hashtag/${match.slice(1)}" class="tag">${match}</a>` : match;
+}
+
+export function checkHashtag(text:string) {
+  /*
+  hashtagRegx
+  #이 시발점, #,알파벳 대소문자, 한글,-,_, 포함
+  */
+  const hashtagRegx = /(?<![/])(#[a-zA-Z가-힣-_\d-]+)/gi;
+
+  return text.replace(hashtagRegx, convertFromTextToTag);
+}
