@@ -12,3 +12,16 @@ export interface Comment {
   tags: Array<Tag>,
   updatedAt: string
 }
+
+export interface Post {
+  postId: number,
+  publisherNickname: string,
+  publisherProfileImg: string,
+  publisherId: number,
+  mention: null | string,
+  location: null | string,
+  updatedAt: null | string,
+  tags: Array<Tag>,
+  postImages: Array<string>,
+  comments: Array<Comment>
+}
