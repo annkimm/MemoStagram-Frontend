@@ -65,7 +65,7 @@ function IntroProfile({
           </div>
         </div>
       </Profile>
-      <Button onClick={handleClickModal} width="18px">
+      <Button disabled={false} onClick={handleClickModal} width="18px">
         <Icon icon={['fas', 'ellipsis-h']} size="lg" />
       </Button>
     </Wrapper>
