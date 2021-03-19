@@ -86,7 +86,7 @@ const Login = () => {
             <LoginButton type="submit" onClick={onClickLogin}>
               login
             </LoginButton>
-            <Button className="findpwd" onClick={onClickFindPwd}>find password</Button>
+            <Button disabled={false} className="findpwd" onClick={onClickFindPwd}>find password</Button>
           </div>
         </div>
       </Wrap>

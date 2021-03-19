@@ -31,3 +31,8 @@ export function login({ email, password }: userInput) {
 
   return instance.post('/', data);
 }
+
+export function getPosts(nextPage: number) {
+  const hasMorePage = nextPage > 0 ? `?page=${nextPage}` : '';
+  return instance.get(`/post/all/${hasMorePage}`);
+}

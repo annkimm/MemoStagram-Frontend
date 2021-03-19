@@ -32,7 +32,7 @@ function MainHeader() {
         <Logo>MemoGram</Logo>
       </HeaderLeft>
       <div>
-        <Button onClick={onClick}>
+        <Button disabled={false} onClick={onClick}>
           <Icon icon={['far', 'plus-square']} size="2x" color={gray2} />
         </Button>
         <Input ref={inputFile} name="file" hidden onChange={handleChange} />

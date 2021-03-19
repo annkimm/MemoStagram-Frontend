@@ -18,12 +18,12 @@ function SlideArrows({
   return (
     <ArrowsWrapper>
       {prevArrowDisabled && (
-      <Arrow width="26px" className="left" onClick={handleClickArrowLeft}>
+      <Arrow disabled={false} width="26px" className="left" onClick={handleClickArrowLeft}>
         <Icon icon={['fas', 'arrow-circle-left']} size="2x" color={white2Opacity50} />
       </Arrow>
       )}
       {nextArrowDisabled && (
-      <Arrow width="26px" className="right" onClick={handleClickArrowRight}>
+      <Arrow disabled={false} width="26px" className="right" onClick={handleClickArrowRight}>
         <Icon icon={['fas', 'arrow-circle-right']} size="2x" color={white2Opacity50} />
       </Arrow>
       )}

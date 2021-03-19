@@ -26,7 +26,7 @@ function Default({
       <ModalBox>
         <Header>
           <Title>{title}</Title>
-          <Button className="xbutton" onClick={onClickCloseModal}>
+          <Button disabled={false} className="xbutton" onClick={onClickCloseModal}>
             <Icon icon={['fas', 'times']} color={gray8} size="lg" />
           </Button>
         </Header>
@@ -34,8 +34,8 @@ function Default({
           {children ? { children } : <Text>{content}</Text>}
         </Section>
         <footer>
-          <Button className="button cancle" onClick={onClickCloseModal}>{btnName ? '취소' : '확인'}</Button>
-          {handleClick && <Button className="button" onClick={handleClick}>{btnName}</Button>}
+          <Button disabled={false} className="button cancle" onClick={onClickCloseModal}>{btnName ? '취소' : '확인'}</Button>
+          {handleClick && <Button disabled={false} className="button" onClick={handleClick}>{btnName}</Button>}
         </footer>
       </ModalBox>
     </Wrapper>
