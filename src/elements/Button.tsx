@@ -7,13 +7,15 @@ interface Props {
   className?: string;
   width? : string;
   dataContent?: string;
+  disabled: boolean;
 }
 
 const Button = ({
-  onClick, children, width = '', className = '', dataContent = '',
+  onClick, children, width = '', className = '', dataContent = '', disabled,
 }: Props) => (
   <DefaultButton
     type="button"
+    disabled={disabled}
     onClick={onClick}
     width={width}
     className={className}

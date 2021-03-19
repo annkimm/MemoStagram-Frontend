@@ -13,6 +13,14 @@ export interface Comment {
   updatedAt: string
 }
 
+export interface Meta {
+  next: string | null,
+  prev: string | null,
+  curr: number,
+  length: number,
+  hasMorePage: boolean,
+}
+
 export interface Post {
   postId: number,
   publisherNickname: string,
