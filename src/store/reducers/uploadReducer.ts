@@ -2,6 +2,7 @@ import { createReducer } from 'typesafe-actions';
 import { makeConcatArray } from 'utils/util';
 import {
   uploadAction, ADD_FILES, ADD_CHAMGE_FILE_IDX, CHANGE_FILES, REMOVE_FILES,
+  ADD_FILES_PAGE_TITLE, SET_RPOFILE_RESULT, UNSET_RPOFILE_RESULT,
 } from '../actions/uploadTypes';
 
 export interface UploadFile{
@@ -11,12 +12,16 @@ export interface UploadFile{
 
 export interface UploadState extends UploadFile {
     imageIdx: number;
+    title: string;
+    profileRequestResult: string;
 }
 
 const initialState: UploadState = {
   previewLinks: [],
   fileNames: [],
   imageIdx: -1,
+  title: '',
+  profileRequestResult: '',
 };
 
 const uploadReducer = createReducer<UploadState, uploadAction>(initialState, {
@@ -40,6 +45,15 @@ const uploadReducer = createReducer<UploadState, uploadAction>(initialState, {
     const fileNames = makeConcatArray(state.fileNames, imageIdx);
     return ({ ...state, previewLinks, fileNames });
   },
+  [ADD_FILES_PAGE_TITLE]: (state, action) => {
+    const { title } = action.payload;
+    return ({ ...state, title });
+  },
+  [SET_RPOFILE_RESULT]: (state, action) => {
+    const { profileRequestResult } = action.payload;
+    return ({ ...state, profileRequestResult });
+  },
+  [UNSET_RPOFILE_RESULT]: (state) => ({ ...state, profileRequestResult: '' }),
   [REMOVE_FILES]: () => (initialState),
 });
 

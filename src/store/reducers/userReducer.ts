@@ -1,5 +1,7 @@
 import { createReducer } from 'typesafe-actions';
-import { SET_USER_INFO, UNSET_USER_INFO, userAction } from '../actions/userTypes';
+import {
+  SET_USER_INFO, UNSET_USER_INFO, CHANGE_PROFILE_IMAGE, userAction,
+} from '../actions/userTypes';
 
 export type userState = {
     token: null | string,
@@ -22,6 +24,12 @@ const userReducer = createReducer<userState, userAction>(initialState, {
     } = action.payload;
     return ({
       ...state, token, nickName, email, profileImage,
+    });
+  },
+  [CHANGE_PROFILE_IMAGE]: (state, action) => {
+    const { profileImage } = action.payload;
+    return ({
+      ...state, profileImage,
     });
   },
   [UNSET_USER_INFO]: () => (initialState),
