@@ -27,3 +27,13 @@ export function checkHashtag(text:string) {
 
   return text.replace(hashtagRegx, convertFromTextToTag);
 }
+
+export function convertFromTextToId(text:string) {
+  /*
+  idRegx
+  @이 시발점, @을 포함하지 않음 / 알파벳 대소문자, -,_,~ 포함
+  */
+  const idRegx = /(?<![/])((?<=@)[a-zA-Z-_~\d-]+)/i;
+
+  return text.match(idRegx);
+}
