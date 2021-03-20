@@ -1,8 +1,21 @@
 import { store } from 'index';
 import { addFiles } from 'store/actions/uploadStore';
+import { Post } from 'types/response';
 
 export function makeArrayKey(length: number) {
   return Array.from(Array(length).keys());
+}
+
+export function makeDoubleArray(postList: Array<Post>) {
+  const result: Array<Array<Post>> = [];
+  let sliceIdx = 0;
+
+  while (sliceIdx < postList.length) {
+    result.push(postList.slice(sliceIdx, sliceIdx + 3));
+    sliceIdx += 3;
+  }
+
+  return result;
 }
 
 export function makeConcatArray(uploadList: Array<string>, idx: number) {
