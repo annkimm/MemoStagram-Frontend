@@ -4,11 +4,12 @@ import modalReducer from 'store/reducers/modalReducer';
 import loginReducer from 'store/reducers/loginReducer';
 import userReducer from 'store/reducers/userReducer';
 import uploadReducer from 'store/reducers/uploadReducer';
+import locationReducer from 'store/reducers/locationReducer';
 import replyReducer from 'store/reducers/replyReducer';
 import loginSaga from './sagas/loginWatcher';
 
 const rootReducer = combineReducers({
-  loginReducer, userReducer, uploadReducer, modalReducer, replyReducer,
+  loginReducer, userReducer, uploadReducer, modalReducer, locationReducer, replyReducer,
 });
 
 export function* rootSaga() {
