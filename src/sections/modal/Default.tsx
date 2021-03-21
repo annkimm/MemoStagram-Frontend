@@ -1,42 +1,40 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import Button from 'elements/Button';
-import Icon from 'elements/Icon';
-import { gray8 } from 'styles/const';
 import {
-  Wrapper, ModalBox, Header, Title, Section, Text,
+  Wrapper, ModalBox, Section, Text,
 } from './Default.style';
+import Header from './default/Header';
+import Footer from './default/Footer';
 
 interface Props {
     title: string;
-    content: string;
+    content?: string;
     children?: React.ReactNode;
     setModalOpen : Dispatch<SetStateAction<boolean>>;
-    btnName?: string;
+    btnName: string;
+    margin: string;
+    padding: boolean;
     handleClick?: () => void;
+    handleClickClose?: () => void;
 }
 
 function Default({
-  title, content, setModalOpen, children, btnName, handleClick,
+  title, content, setModalOpen, children, btnName, handleClick, handleClickClose, margin, padding,
 }: Props) {
   const onClickCloseModal = () => {
     setModalOpen(false);
+
+    if (handleClickClose) {
+      handleClickClose();
+    }
   };
   return (
     <Wrapper>
       <ModalBox>
-        <Header>
-          <Title>{title}</Title>
-          <Button disabled={false} className="xbutton" onClick={onClickCloseModal}>
-            <Icon icon={['fas', 'times']} color={gray8} size="lg" />
-          </Button>
-        </Header>
-        <Section>
-          {children ? { children } : <Text>{content}</Text>}
+        <Header padding={padding} title={title} onClickClose={onClickCloseModal} />
+        <Section margin={margin}>
+          {children || <Text>{content}</Text>}
         </Section>
-        <footer>
-          <Button disabled={false} className="button cancle" onClick={onClickCloseModal}>{btnName ? '취소' : '확인'}</Button>
-          {handleClick && <Button disabled={false} className="button" onClick={handleClick}>{btnName}</Button>}
-        </footer>
+        <Footer btnName={btnName} onClickClose={onClickCloseModal} onClickNext={handleClick} />
       </ModalBox>
     </Wrapper>
   );

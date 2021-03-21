@@ -14,6 +14,10 @@ export const Wrapper = styled.article`
     height: 100%;
     background-color: ${black1Opacity50};
     z-index: 100;
+
+    .repwdBox {
+        margin-top: 10px;
+    }
 `;
 
 export const ModalBox = styled.div`
@@ -41,17 +45,8 @@ export const ModalBox = styled.div`
     }
 `;
 
-export const Header = styled.header`
-    padding: 18px 18px 4px;
-`;
-
-export const Title = styled.h2`
-    font-size: 24px;
-    text-align: center;
-`;
-
-export const Section = styled.section`
-    margin: 20px 0;
+export const Section = styled.section<{margin: string}>`
+    margin:  ${(props) => props.margin || '20px 0'};
 `;
 
 export const Text = styled.p`

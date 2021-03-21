@@ -40,3 +40,20 @@ export function getPosts(nextPage: number) {
 export function getPost(postId: number) {
   return instance.get(`/post/${postId}`);
 }
+
+export function postPassword(password: string, rePassword: string) {
+  const data = new FormData();
+
+  data.append('password', password);
+  data.append('re_password', rePassword);
+
+  return instance.post('/user/password', data);
+}
+
+export function postNickname(nickname: string) {
+  const data = new FormData();
+
+  data.append('nickname', nickname);
+
+  return instance.post('/user/nickname', data);
+}
