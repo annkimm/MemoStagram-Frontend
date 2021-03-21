@@ -92,6 +92,9 @@ const Login = () => {
       </Wrap>
       {isModalOpen && (
       <Modal
+        padding
+        margin="20px 0"
+        btnName="취소"
         setModalOpen={setModalOpen}
         title={modalContent.title}
         content={modalContent.content}

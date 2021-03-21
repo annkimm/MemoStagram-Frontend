@@ -18,6 +18,27 @@ export function convertFromTextToTag(match: string, capture: string) {
   return capture ? `<a href="/hashtag/${match.slice(1)}" class="tag">${match}</a>` : match;
 }
 
+export function checkPasswordValidity(password: string) {
+  /*
+    passwordRegx
+     숫자, 문자, 특수문자 모두 포함 (8~15자)
+   */
+  const passwordRegx = /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&]).{8,15}.$/;
+  if (password.length < 8) {
+    return '비밀번호를 최소 8자 이상 입력해주세요.';
+  }
+
+  return passwordRegx.test(password) ? '' : '문자 및 숫자, 특수문자를 포함해주세요.';
+}
+
+export function checkRePasswordValidity(password:string, rePassword: string) {
+  if (rePassword.length < 1) {
+    return '비밀번호를 입력해주세요.';
+  }
+
+  return password === rePassword ? '' : '비밀번호가 일치하지 않습니다.';
+}
+
 export function checkHashtag(text:string) {
   /*
   hashtagRegx
