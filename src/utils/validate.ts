@@ -49,6 +49,16 @@ export function checkHashtag(text:string) {
   return text.replace(hashtagRegx, convertFromTextToTag);
 }
 
+export function converFromTextToHashTagArray(text:string) {
+  /*
+  hashtagRegx
+  #이 시발점, #을 포함하지 않음 / 알파벳 대소문자, 한글,-,_, 포함
+  */
+  const hashtagRegx = /(?<![/])((?<=#)[a-zA-Z가-힣-_\d-]+)/gi;
+
+  return text.match(hashtagRegx);
+}
+
 export function convertFromTextToId(text:string) {
   /*
   idRegx
