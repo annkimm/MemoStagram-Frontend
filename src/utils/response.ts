@@ -62,3 +62,11 @@ export function postNickname(nickname: string) {
 export function getHashtag(hashtag: string) {
   return instance.get(`hashtag/search?query=${hashtag}`);
 }
+
+export function postProfileImage(file: any | null) {
+  const data = new FormData();
+
+  data.append('profile_image', file);
+
+  return instance.post('/user/profile', data);
+}
