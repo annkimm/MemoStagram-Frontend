@@ -20,3 +20,4 @@ export const gray12 = '#a5a7aa';
 export const gray13 = '#ededed';
 export const gray14 = '#666';
 export const black1Opacity50 = 'rgba( 0, 0, 0, 0.5 )';
+export const red1 = '#FF0000';

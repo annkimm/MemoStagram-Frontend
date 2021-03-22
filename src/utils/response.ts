@@ -30,12 +30,12 @@ export function login({ email, password }: userInput) {
   data.append('email', email);
   data.append('password', password);
 
-  return instance.post('/', data);
+  return instance.post('/auth', data);
 }
 
 export function getPosts(nextPage: number) {
-  const hasMorePage = nextPage > 0 ? `?page=${nextPage}` : '';
-  return instance.get(`/post/all/${hasMorePage}`);
+  const hasMorePage = nextPage > 0 ? `/?page=${nextPage}` : '';
+  return instance.get(`/post/all${hasMorePage}`);
 }
 
 export function getPost(postId: number) {
