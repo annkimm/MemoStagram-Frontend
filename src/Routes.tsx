@@ -13,6 +13,7 @@ import Hashtag from 'pages/Hashtag';
 import Location from 'pages/Location';
 import CreateImage from 'pages/CreateImage';
 import CreateLocation from 'pages/CreateLocation';
+import CreatePost from 'pages/CreatePost';
 
 function Routes() {
   const isloggedIn = useSelector((state: RootState) => state.loginReducer.isloggedIn);
@@ -28,6 +29,7 @@ function Routes() {
         <Route exact path="/create/image" component={CreateImage} />
         <Route exact path="/create/location" component={CreateLocation} />
         <Route exact path="/location/:address" component={Location} />
+        <Route exact path="/create/post" component={CreatePost} />
       </Switch>
     </Router>
   );
