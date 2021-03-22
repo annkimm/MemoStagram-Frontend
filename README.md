@@ -15,6 +15,8 @@
 ## 구현 기능
 
 - 아토믹 디자인을 차용하여 elements, sections, pages로 컴포넌트화
+- process.env로 개발과 프로덕션 모드를 구분하여 프로덕션 모드일 때는 개발 툴을 사용할 수 없게 설정
+- env 파일로 중요한 개발 키나 주소는 외부에 업로드되지 못하도록 설정
 - 정규표현식을 활용한 로그인 validation 구현
 - redux-saga를 이용하여 받아온 token, 유저 정보는 redux로 저장하여 사용할 수 있도록 구현
 - feedList를 useEffect로 게시물을 일부만 처음 렌더링하여 scroll이 하단에 도달할 때쯤에 api를 call하여 새로운 컨텐츠가 로드되는 infinit scroll 구현
