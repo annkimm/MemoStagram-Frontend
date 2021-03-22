@@ -11,6 +11,7 @@ import Comments from 'pages/Comments';
 import User from 'pages/User';
 import Hashtag from 'pages/Hashtag';
 import Location from 'pages/Location';
+import CreateImage from 'pages/CreateImage';
 import CreateLocation from 'pages/CreateLocation';
 
 function Routes() {
@@ -24,6 +25,7 @@ function Routes() {
         <Route exact path="/comments/:postId" component={Comments} />
         <Route exact path="/hashtag/:tag" component={Hashtag} />
         <Route exact path="/user/:id" component={User} />
+        <Route exact path="/create/image" component={CreateImage} />
         <Route exact path="/create/location" component={CreateLocation} />
         <Route exact path="/location/:address" component={Location} />
       </Switch>
