@@ -20,7 +20,8 @@
     "noEmit": true,
     "noImplicitAny": false,
     "jsx": "react-jsx",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "types": ["daum.maps.d.ts"],
   },
   "include": [
     "src"
