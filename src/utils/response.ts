@@ -54,6 +54,15 @@ export function postPost(fileList:Array<File>,
   return instance.post('/post/create', data);
 }
 
+export function postComment(tags: RegExpMatchArray | null, content: string, postId: number) {
+  const data = new FormData();
+
+  data.append('tags', JSON.stringify(tags));
+  data.append('content', content);
+
+  return instance.post(`/api/v1/post/${postId}/comment`, data);
+}
+
 export function postPassword(password: string, rePassword: string) {
   const data = new FormData();
 
