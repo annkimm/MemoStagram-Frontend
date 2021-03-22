@@ -63,6 +63,10 @@ export function postComment(tags: RegExpMatchArray | null, content: string, post
   return instance.post(`/api/v1/post/${postId}/comment`, data);
 }
 
+export function getUer(userIdx: number) {
+  return instance.get(`/post/from/${userIdx}`);
+}
+
 export function postPassword(password: string, rePassword: string) {
   const data = new FormData();
 

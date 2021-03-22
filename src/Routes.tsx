@@ -8,6 +8,7 @@ import Login from 'pages/Login';
 import Main from 'pages/Main';
 import Post from 'pages/Post';
 import Comments from 'pages/Comments';
+import User from 'pages/User';
 import Hashtag from 'pages/Hashtag';
 
 function Routes() {
@@ -20,6 +21,7 @@ function Routes() {
         <Route exact path="/post/:postId" component={Post} />
         <Route exact path="/comments/:postId" component={Comments} />
         <Route exact path="/hashtag/:tag" component={Hashtag} />
+        <Route exact path="/user/:id" component={User} />
       </Switch>
     </Router>
   );
