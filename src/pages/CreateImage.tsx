@@ -13,7 +13,7 @@ import { Footer } from 'pages/CreateImage.style';
 import { convertToDate64FromFile, convertToFileFromDate64 } from 'utils/util';
 import { changeUserProfileImage } from 'store/actions/userStore';
 
-function CreatePostImage() {
+function CreateImage() {
   const { previewLinks, title, fileNames } = useSelector(
     (state: RootState) => (state.uploadReducer),
   );
@@ -117,4 +117,4 @@ function CreatePostImage() {
   );
 }
 
-export default CreatePostImage;
+export default CreateImage;
