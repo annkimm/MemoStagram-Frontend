@@ -20,7 +20,6 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.7",
     "axios": "^0.21.1",
-    "history": "^4.10.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -62,6 +61,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^0.3.0",
+    "@types/node": "^12.20.6",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "daum.maps.d.ts": "github:Musma/daum.maps.d.ts",
